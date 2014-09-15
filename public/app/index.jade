@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+head
+	meta(charset='UTF-8')
+	title Films service
+	link(rel="stylesheet",  href="./styles/style.css")
+body
+	#films-container
+	input#add-film-button(type="button", value='Add film')
+	script#film-template(type="text/template")
+		span.film-id <%= id %>
+		a(href!="film-details.html?id=<%=id%>")
+			span.film-name <%= name %>
+		span.film-year <%= year %>
+		input.film-delete-button(type="button", value='Delete film')
+		input.film-edit-button(type="button", value='Edit film')
+
+	script#film-template-edit(type='text/template')
+		span.film-id <%= id %>
+		input.film-name-input(type='text', value!='<%= name %>')
+		input.film-year-input(type="text", value!='<%= year %>')
+		input.film-editapprove-button(type='button', value='Save')
+		input.film-editcancel-button(type='button' value='Cancel')
+
+
+	script(type="text/javascript", src="../../bower_components/requirejs/require.js", data-main='javascripts/requireConfig')
+	script(type="text/javascript", src="javascripts/index.js")

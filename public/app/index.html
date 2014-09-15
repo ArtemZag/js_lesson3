@@ -1,37 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Films service</title>
-		<link rel="stylesheet" href="./styles/style.css">
-	</head>
-	<body>
-		<div id="films-container"></div>
-		
-		<input type='button' value='Add film' id='add-film-button'></input>
-		<script type="text/template" id="film-template">
-			<span class="film-id"><%= id %></span>
-			<a href='film-details.html?id=<%=id%>'>
-				<span class="film-name"><%= name %></span>
-			</a>
-			<span class="film-year"><%= year %></span>
-			<input type='button' class="film-delete-button" value="Delete film"></input>
-			<input type='button' class="film-edit-button" value='Edit film'></input>
-		</script>
-		<script type="text/template" id="film-template-edit">
-			<span class="film-id"><%= id %></span>
-			<input type='text' class="film-name-input" value='<%= name %>'></input>
-			<input type='text' class="film-year-input" value='<%= year %>'></input>
-			<input type='button' class="film-editapprove-button" value="Save"></input>
-			<input type='button' class="film-editcancel-button" value='Cancel'></input>
-		</script>
-		<script src="./javascripts/jquery.js"></script>
-		<script src="./javascripts/underscore.js"></script>
-		<script src="./javascripts/backbone.js"></script>
-		<script src="./javascripts/Film.js"></script>
-		<script src="./javascripts/FilmView.js"></script>
-		<script src="./javascripts/FilmCollection.js"></script>
-		<script src="./javascripts/FilmCollectionView.js"></script>
-		<script src="./javascripts/AddFilmButtonView.js"></script>
-	</body>
-</html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <title>Films service</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div id="films-container"></div>
+  <input id="add-film-button" type="button" value="Add film">
+  <script id="film-template" type="text/template"><span class="film-id"><%= id %></span><a href="film-details.html?id=<%=id%>"><span class="film-name"><%= name %></span></a><span class="film-year"><%= year %></span>
+    <input type="button" value="Delete film" class="film-delete-button">
+    <input type="button" value="Edit film" class="film-edit-button">
+  </script>
+  <script id="film-template-edit" type="text/template"><span class="film-id"><%= id %></span>
+    <input type="text" value="<%= name %>" class="film-name-input">
+    <input type="text" value="<%= year %>" class="film-year-input">
+    <input type="button" value="Save" class="film-editapprove-button">
+    <input type="button" value="Cancel" class="film-editcancel-button">
+  </script>
+  <script type="text/javascript" src="../../bower_components/requirejs/require.js" data-main="javascripts/requireConfig"></script>
+  <script type="text/javascript" src="javascripts/index.js"></script>
+</body>

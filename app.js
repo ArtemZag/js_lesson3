@@ -4,6 +4,7 @@ var express = require('express'),
     filmService = require('./filmService');
 
 app.use(express.static(__dirname + '/public'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use(bodyParser.json());
 
 app.get('/api/films', function(req, res) {
