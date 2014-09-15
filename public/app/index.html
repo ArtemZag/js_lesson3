@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Films service</title>
+		<link rel="stylesheet" href="./styles/style.css">
+	</head>
+	<body>
+		<div id="films-container"></div>
+		
+		<input type='button' value='Add film' id='add-film-button'></input>
+		<script type="text/template" id="film-template">
+			<span class="film-id"><%= id %></span>
+			<a href='film-details.html?id=<%=id%>'>
+				<span class="film-name"><%= name %></span>
+			</a>
+			<span class="film-year"><%= year %></span>
+			<input type='button' class="film-delete-button" value="Delete film"></input>
+			<input type='button' class="film-edit-button" value='Edit film'></input>
+		</script>
+		<script type="text/template" id="film-template-edit">
+			<span class="film-id"><%= id %></span>
+			<input type='text' class="film-name-input" value='<%= name %>'></input>
+			<input type='text' class="film-year-input" value='<%= year %>'></input>
+			<input type='button' class="film-editapprove-button" value="Save"></input>
+			<input type='button' class="film-editcancel-button" value='Cancel'></input>
+		</script>
+		<script src="./javascripts/jquery.js"></script>
+		<script src="./javascripts/underscore.js"></script>
+		<script src="./javascripts/backbone.js"></script>
+		<script src="./javascripts/Film.js"></script>
+		<script src="./javascripts/FilmView.js"></script>
+		<script src="./javascripts/FilmCollection.js"></script>
+		<script src="./javascripts/FilmCollectionView.js"></script>
+		<script src="./javascripts/AddFilmButtonView.js"></script>
+	</body>
+</html>
