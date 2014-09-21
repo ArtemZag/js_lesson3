@@ -1,8 +1,8 @@
-define('Film', ['backbone'], function(backbone) {
+define(['backbone'], function(backbone) {
     var Film = backbone.Model.extend({
         url: function() {
-            if (this.id == undefined)
-                return '/api/films'
+            if (this.id === undefined)
+                return '/api/films';
             else
                 return '/api/films/' + this.id;
         },

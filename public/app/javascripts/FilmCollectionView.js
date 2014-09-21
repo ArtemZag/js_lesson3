@@ -1,4 +1,4 @@
-define('FilmCollectionView', ['backbone', 'FilmView'], function(backbone, FilmView) {
+define(['backbone', 'FilmView'], function(backbone, FilmView) {
     var FilmCollectionView = backbone.View.extend({
         el: '#films-container',
         initialize: function() {
@@ -10,8 +10,16 @@ define('FilmCollectionView', ['backbone', 'FilmView'], function(backbone, FilmVi
                 model: model
             });
             this.$el.append(view.$el);
+        },
+
+        show: function() {
+            this.$el.show();
+        },
+
+        hide: function() {
+            this.$el.hide();
         }
     });
 
     return FilmCollectionView;
-})
+});

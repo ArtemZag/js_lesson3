@@ -1,4 +1,4 @@
-define('FilmView', ['backbone', 'underscore'], function(backbone, _) {
+define(['backbone', 'underscore'], function(backbone, _) {
     var FilmView = backbone.View.extend({
         className: 'film-container',
         template: _.template($('#film-template').html()),
@@ -13,7 +13,7 @@ define('FilmView', ['backbone', 'underscore'], function(backbone, _) {
 
         initialize: function() {
             this.listenTo(this.model, 'destroy', this.remove);
-            this.listenTo(this.model, 'change:id', this.render)
+            this.listenTo(this.model, 'change:id', this.render);
             this.render();
         },
 
@@ -32,8 +32,8 @@ define('FilmView', ['backbone', 'underscore'], function(backbone, _) {
         },
 
         editApprove: function() {
-            this.model.set('name', this.$el.find('input.film-name-input').val());
-            this.model.set('year', this.$el.find('input.film-year-input').val());
+            this.model.set('name', this.$('input.film-name-input').val());
+            this.model.set('year', this.$('input.film-year-input').val());
             var view = this;
             this.model.save(null, {
                 success: function(model, response) {

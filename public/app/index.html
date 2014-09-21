@@ -7,8 +7,9 @@
 </head>
 <body>
   <div id="films-container"></div>
-  <input id="add-film-button" type="button" value="Add film">
-  <script id="film-template" type="text/template"><span class="film-id"><%= id %></span><a href="film-details.html?id=<%=id%>"><span class="film-name"><%= name %></span></a><span class="film-year"><%= year %></span>
+  <input id="add-film-button" type="button" value="Add film" style="display: none">
+  <div id="film-details-container"></div>
+  <script id="film-template" type="text/template"><span class="film-id"><%= id %></span><a href="#FilmDetails/<%=id%>"><span class="film-name"><%= name %></span></a><span class="film-year"><%= year %></span>
     <input type="button" value="Delete film" class="film-delete-button">
     <input type="button" value="Edit film" class="film-edit-button">
   </script>
@@ -18,6 +19,18 @@
     <input type="button" value="Save" class="film-editapprove-button">
     <input type="button" value="Cancel" class="film-editcancel-button">
   </script>
-  <script type="text/javascript" src="../../bower_components/requirejs/require.js" data-main="javascripts/requireConfig"></script>
-  <script type="text/javascript" src="javascripts/index.js"></script>
+  <script id="film-details-template" type="text/template"><a href="#">All films</a>
+    <div><img src="<%= poster %>"></div>
+    <div><span class="film-details-label">Name:</span><span class="film-details-valuelabel"><%= name %></span></div>
+    <div><span class="film-details-label">Year:</span><span class="film-details-valuelabel"><%= year %></span></div>
+    <div><span class="film-details-label">Details1:</span><span class="film-details-valuelabel"><%= details1 %></span></div>
+    <div><span class="film-details-label">Details2:</span><span class="film-details-valuelabel"><%= details2 %></span></div>
+    <div><span class="film-details-label">Details3:</span><span class="film-details-valuelabel"><%= details3 %></span></div>
+    <div><span class="film-details-label">Details4:</span><span class="film-details-valuelabel"><%= details4 %></span></div>
+    <div><span class="film-details-label">Details5:</span><span class="film-details-valuelabel"><%= details5 %></span></div>
+    <div><span class="film-details-label">Details6:</span><span class="film-details-valuelabel"><%= details6 %></span></div>
+    <div><span class="film-details-label">Details7:</span><span class="film-details-valuelabel"><%= details7 %></span></div>
+    <div><span class="film-details-label">Details8:</span><span class="film-details-valuelabel"><%= details8 %></span></div>
+  </script>
+  <script type="text/javascript" src="../../bower_components/requirejs/require.js" data-main="javascripts/build/index"></script>
 </body>

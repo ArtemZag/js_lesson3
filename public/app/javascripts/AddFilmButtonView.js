@@ -1,17 +1,23 @@
-define('AddFilmButtonView', ['backbone'], function(backbone) {
-	// Не знаю, как это правильно оформить, сделал пока так, но очень похоже на костыль
+define(['backbone'], function(backbone) {
 	var AddFilmButtonView = backbone.View.extend( {
 		el: '#add-film-button',
-		initialize: function(args) {
-			this.films = args.films;		
+		initialize: function() {
 		},
 		events: {
 			'click' : 'addFilm'
 		},
 		addFilm: function() {
-			this.films.create();
-		}
+			this.trigger('addFilmClick');
+		},
+
+        show: function() {
+            this.$el.show();
+        },
+
+        hide: function() {
+            this.$el.hide();
+        }
 	});
 
 	return AddFilmButtonView;
-})
+});
